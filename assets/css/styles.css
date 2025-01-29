@@ -1,0 +1,66 @@
+/* Remove outline and box-shadow for interactive elements */
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active {
+    outline: none !important;
+    -webkit-appearance: none;
+    box-shadow: none !important;
+}
+
+/* Styling for the login box */
+.box {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.32); /* Increased shadow for better emphasis */
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    max-height: 450px; /* Increased max-height */
+    width: 480px; /* Increased width */
+    padding: 50px; /* Increased padding for more spacing inside the box */
+    margin: 20px auto 28px; /* Center horizontally and maintain vertical spacing */
+    background: white; /* Ensure the box background is white */
+}
+
+/* Footer styling */
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    padding: 5px 0; /* Smaller padding for a smaller footer */
+    z-index: 99;
+    text-align: right; /* Align text to the right */
+    color: white; /* Text color to be visible on the dark background */
+}
+
+/* Styling for footer links and text */
+.footerNode {
+    display: inline-block; /* Align footer content horizontally */
+    color: white; /* Ensure text is visible on the dark background */
+    font-size: 0.75rem; /* Adjust font size if needed */
+    line-height: 28px;
+    white-space: nowrap;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.footerNode a {
+    color: #0095ff; /* Link color for visibility */
+}
+
+.footerNode a:hover {
+    text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+/* Hide elements on small screens */
+@media only screen and (max-width: 610px) {
+    #hide {
+        display: none;
+    }
+}
